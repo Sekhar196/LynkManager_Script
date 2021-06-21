@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Suite">
+  <test thread-count="5" name="Test">
+    <classes>
+      <class name="lynk.Manager.ContactFinanceTest"/>
+      <class name="lynk.Manager.TeamScreenTest"/>
+      <class name="lynk.Manager.loginForAdmin"/>
+      <class name="lynk.Manager.CampaignScreenTest"/>
+      <class name="lynk.Manager.AllotmentScreenTest"/>
+      <class name="lynk.Manager.ProgramFiltersTest"/>
+      <class name="lynk.Manager.MessagingScreenTest"/>
+      <class name="lynk.Manager.ContactPersonalInfoTest"/>
+      <class name="lynk.Manager.ContactGeneralInfoTest"/>
+      <class name="lynk.Manager.ContentScreenTest"/>
+      <class name="lynk.Manager.ProgramInformationGeneralTest"/>
+      <class name="lynk.Manager.ContactSecondBuyerTest"/>
+      <class name="lynk.Manager.SalesFollowUpTest"/>
+      <class name="lynk.Manager.ProgramLocalisationTest"/>
+      <class name="lynk.Manager.ContactSearchCriteriaTest"/>
+      <class name="lynk.Manager.ProspectsTest"/>
+      <class name="lynk.Manager.ContactOpportunityTest"/>
+      <class name="lynk.Manager.ElectricalSignatureTest"/>
+      <class name="lynk.Manager.ProgramAllotementTest"/>
+      <class name="lynk.Manager.ContactDocumentationTest"/>
+      <class name="lynk.Manager.ProgramPackageTest"/>
+      <class name="lynk.Manager.ProgramLotsTest"/>
+      <class name="lynk.Manager.ProgramMediaTest"/>
+      <class name="lynk.Manager.EmailTemplateScreenTest"/>
+    </classes>
+  </test> <!-- Test -->
+</suite> <!-- Suite -->
