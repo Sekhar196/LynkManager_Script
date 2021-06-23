@@ -1,5 +1,6 @@
 package lynk.Manager;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.openqa.selenium.By;
@@ -13,6 +14,7 @@ public class ContactDocumentation extends DefaultProgram{
 	By addButton                        = By.xpath("//button[text()=' Ajouter ']");
 	By documentTitle                    = By.xpath("//input[@id='fichier-property']");
 	By documentType                     = By.xpath("//select[@class='form-control']");
+	By documentTypeList                 = By.xpath("//select[@class='form-control']/*");
 	By insertMedia                      = By.xpath("//button[text()=' Insérer un média ']");
 	By listOfPrograms                   = By.xpath("(//div[@class='tag-list'])[1]/./button");
 	By listOfTypes                      = By.xpath("(//div[@class='tag-list'])[2]/./button");
@@ -49,7 +51,7 @@ public class ContactDocumentation extends DefaultProgram{
 	public void selectDocType()
 	{
 		Select docType                  = new Select(driver.findElement(documentType));
-		docType.selectByVisibleText("Déclaration de revenu");
+		docType.selectByVisibleText("Offre de prêt");
 	}
 	public void clickOnInsertMedia()
 	{
@@ -58,25 +60,34 @@ public class ContactDocumentation extends DefaultProgram{
 	}
 	public void selectProgram()
 	{
+		waitForElement(listOfPrograms);
 		List<WebElement> chooseProgram  = driver.findElements(listOfPrograms);
 		for (WebElement selProg : chooseProgram) {
-			if(selProg.getText().equals(" Most Beautiful "))
+			if(selProg.getText().equals("FALCON BEAUTIFUL PROPERTIES"))
 			{
 				selProg.click();
+				break;
 			}
 			
 		}
 	}
 	public void selectMedia()
 	{
+//		waitForElement(listOfMedia);
 		List<WebElement> chooseMedia    = driver.findElements(listOfMedia);
-		for (WebElement selMedia : chooseMedia) {
-			if(selMedia.getText().equals("dummy"))
-			{
-				selMedia.click();
-			}
-			
-		}
+//		for (WebElement selMedia : chooseMedia) {
+//			if(selMedia.getText().equals("Feedback V33.0"))
+//			{
+//				selMedia.click();
+//				break;
+//			}
+//			
+//		}
+		
+		
+		ArrayList al = new ArrayList();
+		System.out.println(al.add(chooseMedia));
+		
 	}
 
 }

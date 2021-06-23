@@ -3,12 +3,12 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="lynk.Manager.ContactOpportunityTest">
+      <class name="lynk.Manager.ContactDocumentationTest">
         <methods>
-          <include name="opportunityTest"/>
           <include name="browserLaunching"/>
+          <include name="documentationScreen"/>
         </methods>
-      </class> <!-- lynk.Manager.ContactOpportunityTest -->
+      </class> <!-- lynk.Manager.ContactDocumentationTest -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

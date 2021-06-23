@@ -20,7 +20,7 @@ public class ContactOpportunities extends DefaultProgram{
 	By programDropDown                     = By.xpath("//span[@class='mat-option-text']");//("//div[@id='cdk-overlay-2']/../div/div/div/mat-option");
 	
 	By lot                                 = By.id("mat-select-4");
-	By lotDropDown                         = By.xpath("//span[@class='mat-option-text']");//("//div[@id='cdk-overlay-3']/../div/div/div/mat-option");
+	By lotDropDown                         = By.xpath("//div[@class='cdk-overlay-pane']/div/div/*");//("//div[@id='cdk-overlay-3']/../div/div/div/mat-option");
 	
 	By purchaseProject                     = By.id("mat-select-5");
 	By purchaseDropDown                    = By.xpath("//span[@class='mat-option-text']");
@@ -102,10 +102,10 @@ public class ContactOpportunities extends DefaultProgram{
 		WebElement lotTextField         = driver.findElement(lot);
 		lotTextField.click();
 		
-		waitForElement(lotDropDown);
+		Thread.sleep(5000);
 		List<WebElement> chooseLot      = driver.findElements(lotDropDown);
 		for (WebElement selectLot : chooseLot) {
-			if(selectLot.getText().equalsIgnoreCase("CoWorking Lot2"))
+			if(selectLot.getText().equalsIgnoreCase("CoWorking Lot2 - Disponible"))
 			{
 				selectLot.click();
 				break;
