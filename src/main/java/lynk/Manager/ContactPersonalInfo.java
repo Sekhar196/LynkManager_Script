@@ -182,16 +182,16 @@ public class ContactPersonalInfo extends DefaultProgram {
 		}
 	}
 	
-	public void selectRespCommercial()
+	public void selectRespCommercial() throws InterruptedException
 	{
 		waitForElement(refCommercial);
 		WebElement response           = driver.findElement(refCommercial);
 		response.click();
 		
-		waitForElement(refCommercialList);
+		Thread.sleep(5000);
 		List<WebElement> responseCom  = driver.findElements(refCommercialList);
 		for (WebElement chooseCommercial : responseCom) {			
-			if(chooseCommercial.getText().equals("MORE"))
+			if(chooseCommercial.getText().equalsIgnoreCase("MORE"))
 			{
 				chooseCommercial.click();
 				break;

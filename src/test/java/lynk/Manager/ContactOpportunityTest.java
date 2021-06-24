@@ -11,10 +11,8 @@ public class ContactOpportunityTest extends ContactOpportunities{
 	@Test
 	public void opportunityTest() throws InterruptedException, IOException
 	{
-		ContactGeneralInfoTest info  = new ContactGeneralInfoTest();
-		info.link();
-		ContactSecondBuyerTest toaster= new ContactSecondBuyerTest();
-		toaster.getToasterMessage();
+		ContactSearchCriteriaTest cst = new ContactSearchCriteriaTest();
+		cst.searchScreen();
 		
 		opportunityScreen();
 		
