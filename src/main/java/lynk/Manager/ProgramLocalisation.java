@@ -8,7 +8,7 @@ import org.openqa.selenium.WebElement;
 public class ProgramLocalisation extends DefaultProgram {
 	
 	By LocalisationLink            = By.xpath("(//label[text()='Localisation'])[1]");
-	By Adresse                     = By.xpath("(//div[@class='pac-item'])[1]");//("//input[@id='searchmapne']");
+	By Adresse                     = By.xpath("//span[@class='pac-item-query']");//("//input[@id='searchmapne']");
 	By addressTextField            = By.xpath("//input[@placeholder='Adresse']");
 	By Ville                       = By.xpath("//input[@id='city-property']");
 	By CodePostal                  = By.xpath("//input[@id='postcode-property']");
@@ -21,7 +21,6 @@ public class ProgramLocalisation extends DefaultProgram {
   	/** Localization Screen All Methods */
   	public void LocalisationScreen() throws InterruptedException
   	{
-  		Thread.sleep(10000);
   		enterAdresse();
 //  		enterVille();
 //  		enteringCodePostal();
@@ -30,25 +29,32 @@ public class ProgramLocalisation extends DefaultProgram {
   		//clickOnSauvegarder();
   	}
   	
-  	/** Enter Address */
-	public void enterAdresse()
+  	/** Enter Address 
+  	 * @throws InterruptedException */
+	public void enterAdresse() throws InterruptedException
 	{
+		waitForElement(By.xpath("//div[text()=' Sauvegardé ']"));
+		WebElement success         = driver.findElement(By.xpath("//div[text()=' Sauvegardé ']"));
+		System.out.println(success.getText());
+		
 		waitForElement(addressTextField);
 		WebElement adresselink     =  driver.findElement(addressTextField);
 		adresselink.sendKeys("porur");
 		
-		waitForElement(Adresse);
-		WebElement location        = driver.findElement(Adresse);
-		location.click();
-//		waitForElement(Adresse);
-//		List<WebElement> LLS       = driver.findElements(Adresse);
-//		for (WebElement selectLocation : LLS) {
-//			if(selectLocation.getText().equals("Porur Flyover"))
-//			{
-//				selectLocation.click();
-//			}
-//			
-//		}
+
+		Thread.sleep(3000);
+		List<WebElement> locations  = driver.findElements(Adresse);
+		for (WebElement location : locations)
+		{
+			if(location.getText().equalsIgnoreCase("Porur Flyover"))
+			{
+				System.out.println("Inside if");
+				location.click();
+				break;
+			}
+			
+		}
+
 	}
 	
 	/** Enter City Name */

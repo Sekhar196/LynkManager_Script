@@ -16,13 +16,13 @@ public class ContactOpportunities extends DefaultProgram{
 	By linkForOpportunity                  = By.xpath("//label[text()='Opportunités']");
 	By addOpportunity                      = By.xpath("//button[text()=' Ajouter une opportunité ']");
 	
-	By program                             = By.id("mat-select-3");//("(//mat-select[@id='mat-select-12']/./div/div)[1]");
+	By program                             = By.xpath("(//div[@class='mat-select-value'])[2]");//("(//mat-select[@id='mat-select-12']/./div/div)[1]");
 	By programDropDown                     = By.xpath("//span[@class='mat-option-text']");//("//div[@id='cdk-overlay-2']/../div/div/div/mat-option");
 	
-	By lot                                 = By.id("mat-select-4");
+	By lot                                 = By.xpath("(//div[@class='mat-select-value'])[3]");
 	By lotDropDown                         = By.xpath("//div[@class='cdk-overlay-pane']/div/div/*");//("//div[@id='cdk-overlay-3']/../div/div/div/mat-option");
 	
-	By purchaseProject                     = By.id("mat-select-5");
+	By purchaseProject                     = By.xpath("(//div[@class='mat-select-value'])[4]");
 	By purchaseDropDown                    = By.xpath("//span[@class='mat-option-text']");
 	
 	By addPackage                          = By.xpath("//button[text()=' Ajouter un pack ']");
@@ -113,15 +113,16 @@ public class ContactOpportunities extends DefaultProgram{
 		}
 	}
 	
-	public void selectTypeOfPurchase()
+	public void selectTypeOfPurchase() throws InterruptedException
 	{
 		waitForElement(purchaseProject);
 		WebElement typeField           = driver.findElement(purchaseProject);
 		typeField.click();
 		
+		Thread.sleep(5000);
 		List<WebElement> chooseType    = driver.findElements(purchaseDropDown);
 		for (WebElement selectType : chooseType) {
-			if(selectType.getText().equals("RP"))
+			if(selectType.getText().equalsIgnoreCase("RP"))
 			{
 				selectType.click();
 				break;

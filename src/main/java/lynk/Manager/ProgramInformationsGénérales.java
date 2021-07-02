@@ -211,6 +211,7 @@ public class ProgramInformationsGénérales extends DefaultProgram{
 		pic.click();
 		Thread.sleep(3000);
 		Runtime.getRuntime().exec("C:\\Users\\softsuave\\Auto it\\imagesHD.exe");
+		
 	}
 	
 	/** Enter Program Name */ 
@@ -271,7 +272,7 @@ public class ProgramInformationsGénérales extends DefaultProgram{
 		notaire.click();
 		List<WebElement> notairValue  = driver.findElements(notaireDropDownList);
 		for (WebElement chooseNotaire : notairValue) {
-			if(chooseNotaire.getText().equals("123 SEC"))
+			if(chooseNotaire.getText().equals("Tata K"))
 			{
 				chooseNotaire.click();
 				break;

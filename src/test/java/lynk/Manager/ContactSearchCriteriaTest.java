@@ -12,8 +12,7 @@ public class ContactSearchCriteriaTest extends ContactSearchCriteria {
 	public void searchScreen() throws InterruptedException, IOException
 	{
 		ContactPersonalInfoTest pInfo = new ContactPersonalInfoTest();
-		pInfo.personalInfo();
-		
+		pInfo.personalInfo();		
 		searchCriteriaScreen();
 	}
 

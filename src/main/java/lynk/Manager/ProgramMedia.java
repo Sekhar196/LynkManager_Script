@@ -37,6 +37,7 @@ public class ProgramMedia extends DefaultProgram {
 		clickOnMediaScreen();
 		clickOnProgram();
 		clickOnAddFile();
+		uploadPdfLink();
 		uploadPdfFile();
 		clickOnSave();
 		Thread.sleep(10000);
@@ -106,10 +107,14 @@ public class ProgramMedia extends DefaultProgram {
 		image.click();
 	}
 	
-	public void uploadPdfFile() throws IOException, InterruptedException
+	
+	public void uploadPdfLink()
 	{
 		WebElement uploadLink      = driver.findElement(mediaUploadLink);
 		uploadLink.click();
+	}
+	public void uploadPdfFile() throws IOException, InterruptedException
+	{
 		Thread.sleep(3000);
 		Runtime.getRuntime().exec("C:\\Users\\softsuave\\Auto it\\docDescriptive.exe");
 		Thread.sleep(3000);

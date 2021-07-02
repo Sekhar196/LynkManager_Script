@@ -226,7 +226,7 @@ public class ContactPersonalInfo extends DefaultProgram {
 		
 		List<WebElement> selectPromoter = driver.findElements(agencyList);
 		for (WebElement choosePromoter : selectPromoter) {
-			if(choosePromoter.getText().equals("P V R"))
+			if(choosePromoter.getText().equalsIgnoreCase("Demo Arlynk"))
 			{
 				choosePromoter.click();
 				break;
